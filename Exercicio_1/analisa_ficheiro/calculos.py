@@ -33,7 +33,7 @@ def calcula_palavra_comprida(nomeFicheiro):
     nomeFicheiro = f.read()
     f.close()
 
-    palavraComprida = nomeFicheiro[0]
+    palavraComprida = nomeFicheiro.split()[0]
 
     for palavra in nomeFicheiro:
         if(palavra > palavraComprida):
