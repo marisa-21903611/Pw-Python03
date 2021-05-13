@@ -8,8 +8,6 @@ def calcula_linhas(nomeFicheiro):
         count+=1
     print (f'Tem {count} linhas.')
 
-#calcula_linhas("historia.txt")
-
 def calcula_caracteres(nomeFicheiro):
     f = open (nomeFicheiro)
     nomeFicheiro = f.read()
@@ -26,21 +24,17 @@ def calcula_caracteres(nomeFicheiro):
             count+=1
     print (f'O ficheiro tem {count} caracteres.')
 
-#calcula_caracteres("historia.txt")
-
 def calcula_palavra_comprida(nomeFicheiro):
     f = open (nomeFicheiro)
     nomeFicheiro = f.read()
     f.close()
 
-    palavraComprida = nomeFicheiro.split()[0]
+    palavraComprida = nomeFicheiro.split()
 
     for palavra in nomeFicheiro:
-        if(palavra > palavraComprida):
+        if(len(palavra) > len(palavraComprida)):
             palavraComprida = palavra
-    print(f'A palavra mais comprida do ficheiro é {palavraComprida}')
-
-calcula_palavra_comprida("historia.txt")
+    print(f'A palavra mais comprida do ficheiro é {palavraComprida[1]}')
 
 def calcula_ocorrencias_de_letras(nomeFicheiro):
     f = open (nomeFicheiro)
@@ -108,4 +102,8 @@ def calcula_ocorrencias_de_letras(nomeFicheiro):
 
     print(dicionario)
 
-#calcula_ocorrencias_de_letras("historia.txt")
+#Testar funções
+calcula_linhas("historia.txt")
+calcula_caracteres("historia.txt")
+calcula_palavra_comprida("historia.txt")
+calcula_ocorrencias_de_letras("historia.txt")
